@@ -1,26 +1,26 @@
 {
   "name": "@coreui/coreui-pro-react-admin-template",
   "version": "2.1.2",
-  "description": "CoreUI Pro React Admin Template",
+  "description": "Crownx",
   "author": {
-    "name": "Łukasz Holeczek",
-    "url": "http://holeczek.pl",
-    "github": "https://github.com/mrholek",
-    "twitter": "https://twitter.com/lukaszholeczek"
+    "name": "Crownx",
+    "url": "http://crownx.com",
+    "github": ".",
+    "twitter": "."
   },
   "contributors": [
     {
-      "name": "Andrzej Kopański",
-      "url": "https://github.com/xidedix"
+      "name": "Crownx",
+      "url": "https://github.com/crownx"
     }
   ],
   "homepage": ".",
-  "copyright": "Copyright 2018 creativeLabs Łukasz Holeczek",
-  "license": "https://coreui.io/pro/license/",
+  "copyright": "Crownx",
+  "license": "Crownx",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:coreui/coreui-pro-react-admin-template.git"
+    "url": "git@github.com:soncnt/coreuipro.git"
   },
   "dependencies": {
     "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
@@ -76,7 +76,7 @@
     "eject": "react-scripts eject"
   },
   "bugs": {
-    "url": "https://github.com/coreui/coreui-pro-react-admin-template/issues"
+    "url": "https://github.com/soncnt/coreuipro/issues"
   },
   "eslintConfig": {
     "extends": "react-app"

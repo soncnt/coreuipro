@@ -148,50 +148,68 @@ class ValidationForms extends React.Component {
                     <Col lg="6">
                       <Form onSubmit={handleSubmit} noValidate name='simpleForm'>
                         <FormGroup>
-                          <Label for="firstName">First Name</Label>
-                          <Input type="text"
-                                 name="firstName"
-                                 id="firstName"
-                                 placeholder="First Name"
-                                 autoComplete="given-name"
-                                 valid={!errors.firstName}
-                                 invalid={touched.firstName && !!errors.firstName}
-                                 autoFocus={true}
-                                 required
-                                 onChange={handleChange}
-                                 onBlur={handleBlur}
-                                 value={values.firstName} />
-                          <FormFeedback>{errors.firstName}</FormFeedback>
+                          <Row>
+                            <Col md="3">
+                              <Label for="firstName">First Name</Label>
+                            </Col>
+                            <Col xs="12" md="9">
+                              <Input type="text"
+                                    name="firstName"
+                                    id="firstName"
+                                    placeholder="First Name"
+                                    autoComplete="given-name"
+                                    valid={!errors.firstName}
+                                    invalid={touched.firstName && !!errors.firstName}
+                                    autoFocus={true}
+                                    required
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.firstName} />
+                              <FormFeedback>{errors.firstName}</FormFeedback>
+                            </Col>
+                          </Row>
                         </FormGroup>
                         <FormGroup>
-                          <Label for="lastName">Last Name</Label>
-                          <Input type="text"
-                                 name="lastName"
-                                 id="lastName"
-                                 placeholder="Last Name"
-                                 autoComplete="family-name"
-                                 valid={!errors.lastName}
-                                 invalid={touched.lastName && !!errors.lastName}
-                                 required
-                                 onChange={handleChange}
-                                 onBlur={handleBlur}
-                                 value={values.lastName} />
-                          <FormFeedback>{errors.lastName}</FormFeedback>
+                          <Row>
+                            <Col md="3">
+                              <Label for="lastName">Last Name</Label>
+                            </Col>
+                            <Col xs="12" md="9">
+                              <Input type="text"
+                                    name="lastName"
+                                    id="lastName"
+                                    placeholder="Last Name"
+                                    autoComplete="family-name"
+                                    valid={!errors.lastName}
+                                    invalid={touched.lastName && !!errors.lastName}
+                                    required
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.lastName} />
+                              <FormFeedback>{errors.lastName}</FormFeedback>
+                            </Col>
+                          </Row>
                         </FormGroup>
                         <FormGroup>
-                          <Label for="userName">User Name</Label>
-                          <Input type="text"
-                                 name="userName"
-                                 id="userName"
-                                 placeholder="User Name"
-                                 autoComplete="username"
-                                 valid={!errors.userName}
-                                 invalid={touched.userName && !!errors.userName}
-                                 required
-                                 onChange={handleChange}
-                                 onBlur={handleBlur}
-                                 value={values.userName} />
-                          <FormFeedback>{errors.userName}</FormFeedback>
+                          <Row>
+                              <Col md="3">
+                              <Label for="userName">User Name</Label>
+                              </Col>
+                              <Col xs="12" md="9">
+                                <Input type="text"
+                                      name="userName"
+                                      id="userName"
+                                      placeholder="User Name"
+                                      autoComplete="username"
+                                      valid={!errors.userName}
+                                      invalid={touched.userName && !!errors.userName}
+                                      required
+                                      onChange={handleChange}
+                                      onBlur={handleBlur}
+                                      value={values.userName} />
+                                <FormFeedback>{errors.userName}</FormFeedback>
+                              </Col>
+                            </Row>
                         </FormGroup>
                         <FormGroup>
                           <Label for="email">Email</Label>

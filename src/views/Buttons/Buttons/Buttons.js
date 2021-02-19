@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { Button, Card, CardBody, CardHeader, Col, Row } from 'reactstrap';
 
 class Buttons extends Component {
+  constructor(){
+    super();
+    this.inputRef = React.createRef();
+  }
+  onClick = () => {
+    this.inputRef.current.focus();
+  }
   render() {
     return (
       <div className="animated fadeIn">
@@ -15,6 +22,8 @@ class Buttons extends Component {
                 Normal
               </Col>
               <Col col="6" sm="4" md="2" xl className="mb-3 mb-xl-0">
+                <input ref={this.inputRef} />
+                <button onClick={this.onClick}>Click để focus</button>
                 <Button block color="primary">Primary</Button>
               </Col>
               <Col col="6" sm="4" md="2" xl className="mb-3 mb-xl-0">

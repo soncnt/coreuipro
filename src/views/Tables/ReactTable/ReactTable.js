@@ -1,79 +1,101 @@
 import React, {Component} from 'react';
-import axios from 'axios';
-
-import data from './_data';
-
-import RcTable from 'react-table';
-import "react-table/react-table.css";
-
-
-const getTestData = (page, pageSize, sorted, filtered, handleRetrievedData) => {
-  let url = this.baseURL + "/getData";
-  let postObject = {
-      page: page,
-      pageSize: pageSize,
-      sorted: sorted,
-      filtered: filtered,
-  }; 
-
-  //return this.post(url, postObject).then(response => handleRetrievedData(response)).catch(response => console.log(response));
-  
-}
-// const post = (url, params = {}) => {
-//   return axios.post(url, params)
-// }
+import makeData from './makeData'
+import "./style.scss";
+import Table from '../../../helpers/Table';
+import { Col, Row, Card, CardBody, CardHeader } from 'reactstrap';
 
 
 class ReactTable extends Component {
-  constructor(props) {
-    super(props);
+  constructor(){
+    super();
     this.state = {
-      data: this.props.data,
+      data: [],
       loading: false,
-      pages: 0
+      pageCount: 0
     };
+
+    this.fetchData = this.fetchData.bind(this);
+
+  }
+  componentDidMount() {
+    console.log("component did mount");
+  }
+  componentDidUpdate() {
+    console.log("component did update");
+  }
+  fetchData({pageSize, pageIndex}){
+    console.log("fetchData");
+    this.setState({
+      loading: true
+    });
+    setTimeout(() => {
+      // We'll even set a delay to simulate a server here
+      const startRow = pageSize * pageIndex;
+      const endRow = startRow + pageSize;
+      const serverData = makeData(1500);
+      this.setState({
+        data: serverData.slice(startRow, endRow),
+        pageCount: Math.ceil(serverData.length / pageSize),
+        loading: false
+      })
+    }, 1000)
+    
   }
 
   render() {
-    const { data } = this.state;
+    const columns = 
+    [
+      {
+        Header: 'First Name',
+        accessor: 'firstName',
+      },
+      {
+        Header: 'Last Name',
+        accessor: 'lastName',
+      },
+      {
+        Header: 'Age',
+        accessor: 'age',
+        //sortType: 'basic'
+      },
+      {
+        Header: 'Visits',
+        accessor: 'visits',
+        // sortType: 'basic'
+      },
+      {
+        Header: 'Status',
+        accessor: 'status',
+      },
+      {
+        Header: 'Profile Progress',
+        accessor: 'progress',
+        // sortType: 'basic'
+      },
+    ];
+
 
     return (
-        <RcTable
-                       data={data}
-                       pages={this.state.pages}
-                       columns={[
-                             {
-                               Header: "Index",
-                               accessor: "index"
-                             },
-                             {
-                               Header: "Status",
-                               accessor: "status"
-                             },
-                             {
-                               Header: "Name",
-                               accessor: "name"
-                              }
-                            ]}
-                     defaultPageSize={10}
-                     className="-striped -highlight"
-                     loading={this.state.loading}
-                     showPagination={true}
-                     showPaginationTop={false}
-                     showPaginationBottom={true}
-                     pageSizeOptions={[5, 10, 20, 25, 50, 100]}
-                     manual // this would indicate that server side pagination has been enabled 
-                     onFetchData={(state, instance) => {
-                             this.setState({loading: true});
-                             this.getTestData(state.page, state.pageSize, state.sorted, state.filtered, (res) => {
-                             this.setState({
-                                     data: res.data.rows,
-                                     pages: res.data.pages,
-                                     loading: false
-                             })
-                          });
-                     }}
-                     />
+      <div className="animated fadeIn">
+        <Row>
+          <Col md="12">
+            <Card>
+              <CardHeader>
+                Card title
+              </CardHeader>
+              <CardBody>
+                  <Table
+                    columns={columns}
+                    data={this.state.data}
+                    fetchData={this.fetchData}
+                    loading={this.state.loading}
+                    pageCount={this.state.pageCount}
+                  />
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </div>
     );
   }
 }

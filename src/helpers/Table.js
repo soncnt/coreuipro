@@ -35,7 +35,7 @@ function Table({
         // pageCount.
         pageCount: controlledPageCount,
       },
-      useSortBy,
+      //useSortBy,
       usePagination
     )
   
@@ -67,13 +67,9 @@ function Table({
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map(column => (
-                  //  <th {...column.getHeaderProps()}>
-                   <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                   <th {...column.getHeaderProps()}>
+                   {/* <th {...column.getHeaderProps(column.getSortByToggleProps())}> */}
                     {column.render('Header')}
-
-                    <span>
-                      {console.log(column.getSortByToggleProps())}
-                    </span>
                     <span>
                       {column.isSorted
                         ? column.isSortedDesc

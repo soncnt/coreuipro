@@ -23,7 +23,7 @@ function Table({
       previousPage,
       setPageSize,
       // Get the state from the instance
-      state: { pageIndex, pageSize },
+      state: { pageIndex, pageSize, sortBy },
     } = useTable(
       {
         columns,
@@ -33,16 +33,18 @@ function Table({
         // hook that we'll handle our own data fetching
         // This means we'll also have to provide our own
         // pageCount.
+        manualSortBy: true,
         pageCount: controlledPageCount,
       },
-      //useSortBy,
+      useSortBy,
       usePagination
     )
   
     // Listen for changes in pagination and use the state to fetch our new data
     React.useEffect(() => {
-      fetchData({ pageIndex, pageSize });
-    }, [fetchData, pageIndex, pageSize])
+      fetchData({ pageIndex, pageSize, sortBy });
+
+    }, [fetchData, pageIndex, pageSize, sortBy])
   
     // Render the UI for your table
     return (
@@ -56,6 +58,7 @@ function Table({
                 pageCount,
                 canNextPage,
                 canPreviousPage,
+                sortBy
               },
               null,
               2
@@ -67,8 +70,8 @@ function Table({
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map(column => (
-                   <th {...column.getHeaderProps()}>
-                   {/* <th {...column.getHeaderProps(column.getSortByToggleProps())}> */}
+                  //  <th {...column.getHeaderProps()}>
+                   <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                     {column.render('Header')}
                     <span>
                       {column.isSorted

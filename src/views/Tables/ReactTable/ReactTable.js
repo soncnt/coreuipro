@@ -18,13 +18,13 @@ class ReactTable extends Component {
 
   }
   componentDidMount() {
-    console.log("component did mount");
+    // console.log("component did mount");
   }
   componentDidUpdate() {
-    console.log("component did update");
+    // console.log("component did update");
   }
-  fetchData({pageSize, pageIndex}){
-    console.log("fetchData");
+  fetchData({pageSize, pageIndex, sortBy}) {
+    console.log(sortBy);
     this.setState({
       loading: true
     });
@@ -38,8 +38,7 @@ class ReactTable extends Component {
         pageCount: Math.ceil(serverData.length / pageSize),
         loading: false
       })
-    }, 1000)
-    
+    }, 1000)    
   }
 
   render() {
@@ -56,12 +55,11 @@ class ReactTable extends Component {
       {
         Header: 'Age',
         accessor: 'age',
-        //sortType: 'basic'
+        sortType: 'basic'
       },
       {
         Header: 'Visits',
         accessor: 'visits',
-        // sortType: 'basic'
       },
       {
         Header: 'Status',

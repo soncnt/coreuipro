@@ -192,28 +192,32 @@ class ValidationForms extends React.Component {
                         </FormGroup>
                         <FormGroup>
                           <Row>
-                              <Col md="3">
-                              <Label for="userName">User Name</Label>
-                              </Col>
-                              <Col xs="12" md="9">
-                                <Input type="text"
-                                      name="userName"
-                                      id="userName"
-                                      placeholder="User Name"
-                                      autoComplete="username"
-                                      valid={!errors.userName}
-                                      invalid={touched.userName && !!errors.userName}
-                                      required
-                                      onChange={handleChange}
-                                      onBlur={handleBlur}
-                                      value={values.userName} />
-                                <FormFeedback>{errors.userName}</FormFeedback>
-                              </Col>
-                            </Row>
+                            <Col md="3">
+                            <Label for="userName">User Name</Label>
+                            </Col>
+                            <Col xs="12" md="9">
+                              <Input type="text"
+                                    name="userName"
+                                    id="userName"
+                                    placeholder="User Name"
+                                    autoComplete="username"
+                                    valid={!errors.userName}
+                                    invalid={touched.userName && !!errors.userName}
+                                    required
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.userName} />
+                              <FormFeedback>{errors.userName}</FormFeedback>
+                            </Col>
+                          </Row>
                         </FormGroup>
                         <FormGroup>
-                          <Label for="email">Email</Label>
-                          <Input type="email"
+                          <Row>
+                            <Col md="3">
+                              <Label for="email">Email</Label>
+                            </Col>
+                            <Col xs="12" md="9">
+                              <Input type="email"
                                  name="email"
                                  id="email"
                                  placeholder="Email"
@@ -224,13 +228,19 @@ class ValidationForms extends React.Component {
                                  onChange={handleChange}
                                  onBlur={handleBlur}
                                  value={values.email} />
-                          <FormFeedback>{errors.email}</FormFeedback>
+                              <FormFeedback>{errors.email}</FormFeedback>
+                            </Col>
+                          </Row>
                         </FormGroup>
-                        <Row>
-                          <Col md={6}>
-                            <FormGroup>
+
+
+                        <FormGroup>
+                          <Row>
+                            <Col md="3">
                               <Label for="password">Password</Label>
-                              <Input type="password"
+                            </Col>
+                            <Col xs="12" md="9">
+                                <Input type="password"
                                      name="password"
                                      id="password"
                                      placeholder="Password"
@@ -241,13 +251,17 @@ class ValidationForms extends React.Component {
                                      onChange={handleChange}
                                      onBlur={handleBlur}
                                      value={values.password} />
-                              {/*<FormFeedback>Required password containing at least: number, uppercase and lowercase letter, 8 characters</FormFeedback>*/}
-                              <FormFeedback>{errors.password}</FormFeedback>
-                            </FormGroup>
-                          </Col>
-                          <Col md={6}>
-                            <FormGroup>
+                                {/*<FormFeedback>Required password containing at least: number, uppercase and lowercase letter, 8 characters</FormFeedback>*/}
+                                <FormFeedback>{errors.password}</FormFeedback>
+                            </Col>
+                          </Row>
+                        </FormGroup>
+                        <FormGroup>
+                          <Row>
+                            <Col md="3">
                               <Label for="confirmPassword">Password</Label>
+                            </Col>
+                            <Col xs="12" md="9">
                               <Input type="password"
                                      name="confirmPassword"
                                      id="confirmPassword"
@@ -260,9 +274,9 @@ class ValidationForms extends React.Component {
                                      onBlur={handleBlur}
                                      value={values.confirmPassword} />
                               <FormFeedback>{errors.confirmPassword}</FormFeedback>
-                            </FormGroup>
-                          </Col>
-                        </Row>
+                            </Col>
+                          </Row>
+                        </FormGroup>
                         <FormGroup>
                           <CustomInput
                             type="checkbox"

@@ -94,7 +94,7 @@ class DefaultAside extends Component {
               <ListGroupItem action tag="a" href="#" className="list-group-item-accent-danger list-group-item-divider">
                 <div>New UI Project - <strong>deadline</strong></div>
                 <small className="text-muted mr-3"><i className="icon-calendar"></i>&nbsp; 10 - 11pm</small>
-                <small className="text-muted"><i className="icon-home"></i>&nbsp; creativeLabs HQ</small>
+                <small className="text-muted"><i className="icon-home"></i>&nbsp; ReactJs</small>
                 <div className="avatars-stack mt-2">
                   <div className="avatar avatar-xs">
                     <img src={'assets/img/avatars/2.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
@@ -121,7 +121,7 @@ class DefaultAside extends Component {
               <ListGroupItem action tag="a" href="#" className="list-group-item-accent-primary list-group-item-divider">
                 <div><strong>Team meeting</strong></div>
                 <small className="text-muted mr-3"><i className="icon-calendar"></i>&nbsp; 4 - 6pm</small>
-                <small className="text-muted"><i className="icon-home"></i>&nbsp; creativeLabs HQ</small>
+                <small className="text-muted"><i className="icon-home"></i>&nbsp; ReactJs</small>
                 <div className="avatars-stack mt-2">
                   <div className="avatar avatar-xs">
                     <img src={'assets/img/avatars/2.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />

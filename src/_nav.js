@@ -336,6 +336,11 @@ export default {
           name: 'Tables',
           url: '/tables/tables',
           icon: 'icon-list'
+        },
+        {
+          name: 'React Table',
+          url: '/tables/react-table',
+          icon: 'icon-list'
         }
       ]
     },

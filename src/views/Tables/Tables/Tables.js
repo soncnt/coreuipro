@@ -9,7 +9,7 @@ class Tables extends Component {
           <Col xs="12" lg="6">
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i> Simple Table
+                Simple Table
               </CardHeader>
               <CardBody>
                 <Table responsive>
